@@ -10,9 +10,8 @@ describe('DisplayGithubUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayGithubUserComponent ]
-    })
-    .compileComponents();
+      declarations: [DisplayGithubUserComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DisplayGithubUserComponent);
     component = fixture.componentInstance;

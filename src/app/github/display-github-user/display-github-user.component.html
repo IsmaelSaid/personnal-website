@@ -1,0 +1,17 @@
+<!-- 
+    IDEA: This component's template should create a good landing page with data come from github's api.
+ -->
+<div *ngIf="githubUserInfos$ | async as githubUserInfos; else elseblock">
+  <div *ngIf="githubUserInfos">
+    login : {{ githubUserInfos.login }}
+  </div>
+</div>
+<ng-template #elseblock> erreur </ng-template>
+
+<div *ngIf = "githubReposInfos$ | async as githubReposInfos">
+  {{githubReposInfos | json}}
+</div>
+
+<div *ngIf = "githubContentInfo$ | async as githubContentInfo">
+  {{githubContentInfo}}
+</div>

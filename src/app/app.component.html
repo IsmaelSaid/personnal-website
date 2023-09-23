@@ -1,2 +1,8 @@
 <app-navbar></app-navbar>
-<app-display-github-user userName = "IsmaelSaid"></app-display-github-user>
+<div *ngIf = "githubUser$ | async as githubUser">
+    <mat-grid-list cols="1" rowHeight="3:1">
+        <mat-grid-tile>
+            <app-landing-page nom = {{githubUser.name}} bio = {{githubUser.bio}}></app-landing-page>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

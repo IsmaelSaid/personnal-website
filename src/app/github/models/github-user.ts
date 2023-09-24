@@ -30,47 +30,6 @@ export type GithubUserInfos = {
   type: string;
 };
 
-/**
- * Represents information about a GitHub repository.
- */
-export type GithubReposInfos = {
-  /** The name of the repository. */
-  name: string;
-
-  /** The full name of the repository (including the user/organization name). */
-  full_name: string;
-
-  /** The URL to the repository on GitHub. */
-  html_url: string;
-
-  /** The primary programming language used in the repository. */
-  language: string;
-};
-
-/**
- * Represents information about a file or content within a GitHub repository.
- */
-export type GithubContentInfos = {
-  /** The name of the file or content. */
-  name: string;
-
-  /** The path to the file or content within the repository. */
-  path: string;
-
-  /** The size of the file in bytes. */
-  size: number;
-
-  /** The content of the file as a base64-encoded string. */
-  content: string;
-};
-
-export const nullGithubRepos: GithubReposInfos = {
-  name: '',
-  full_name: '',
-  html_url: '',
-  language: '',
-};
-
 export const nullGithubUser: GithubUserInfos = {
   avatar_url: '',
   bio: '',

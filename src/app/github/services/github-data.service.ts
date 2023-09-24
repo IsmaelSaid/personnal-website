@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 import { b64DecodeUnicode } from '../../tools/decoder';
+import { GithubUserInfos, nullGithubUser } from '../models/github-user';
 import {
-  GithubUserInfos,
   GithubReposInfos,
-  GithubContentInfos,
-  nullGithubUser,
+  configImportedRepos,
   nullGithubRepos,
-} from '../models/github-user';
+} from '../models/github-repos';
+import { GithubContentInfos } from '../models/github-content';
 
 @Injectable({
   providedIn: 'root',
@@ -42,19 +42,29 @@ export class GithubdataService {
    * Retrieves GitHub repositories information for a given user.
    *
    * @param user - The GitHub username to fetch repositories for.
+   * @param config - An object containing repository configuration, where keys are repository names
+   * and values are custom descriptions (if available).
    * @returns An Observable of an array of GithubReposInfos containing repository information.
    */
-  getRepos(user: string): Observable<GithubReposInfos[]> {
+  getRepos(user: string, config: configImportedRepos): Observable<GithubReposInfos[]> {
     return this.http
       .get<GithubReposInfos[]>(`https://api.github.com/users/${user}/repos`)
       .pipe(
+        // 1 : Looking for errors
         catchError(this.handleErrorGithubReposInfos),
+        // 2 : Transform the stream to keep only repos in config
+        map((data) => {
+          return data.filter((repo) => config[repo.name]);
+        }),
+        // 3 : Transform the stream again to add the custom repo description
         map((repos: GithubReposInfos[]) => {
           return repos.map((repo) => ({
             name: repo.name,
             full_name: repo.full_name,
             html_url: repo.html_url,
             language: repo.language,
+            description: config[repo.name],
+            homepage: repo.homepage,
           }));
         })
       );

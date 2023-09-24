@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GithubUserInfos, GithubReposInfos } from '../models/github-user';
+import { GithubUserInfos } from '../models/github-user';
 import { GithubdataService } from '../services/github-data.service';
 import { Observable, tap } from 'rxjs';
+import { GithubReposInfos } from '../models/github-repos';
 
 @Component({
   selector: 'app-display-github-user',
@@ -21,9 +22,9 @@ export class DisplayGithubUserComponent implements OnInit {
       .getUser(this.userName)
       .pipe(tap(console.info));
 
-    this.githubReposInfos$ = this.githubdataservice
-      .getRepos(this.userName)
-      .pipe(tap(console.log));
+    // this.githubReposInfos$ = this.githubdataservice
+    // .getRepos(this.userName)
+    // .pipe(tap(console.log));
 
     this.githubContentInfo$ = this.githubdataservice
       .getContent('IsmaelSaid', 'Demande-de-valeurs-foncieres', 'readme.md')

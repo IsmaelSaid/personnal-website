@@ -1,0 +1,19 @@
+<mat-card class="projects-cards">
+    <mat-card-header>
+        <!-- <mat-card-title>{{title}}</mat-card-title> -->
+        <mat-card-subtitle>{{title}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{description}}</p>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions class = "card-actions">
+      <a mat-stroked-button href={{link}} target="_blank">
+        <mat-icon svgIcon = 'github' ></mat-icon> Voir
+      </a>
+      <a *ngIf = "homepage" mat-stroked-button href={{homepage}} target="_blank">
+        <mat-icon svgIcon = 'boxarrowinupright' ></mat-icon> Accéder
+      </a>
+    </mat-card-actions>
+
+    

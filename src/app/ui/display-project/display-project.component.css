@@ -1,0 +1,10 @@
+.projects-cards {
+  margin: 20px;
+  height: 20rem;
+  width: 20rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-evenly;
+}

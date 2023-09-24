@@ -8,6 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { DisplayProjectComponent } from './display-project/display-project.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [NavbarComponent, LandingPageComponent, DisplayProjectComponent],
@@ -18,6 +19,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatGridListModule,
     MatCardModule,
     MatDividerModule,
+    MatIconModule,
   ],
   exports: [
     NavbarComponent,

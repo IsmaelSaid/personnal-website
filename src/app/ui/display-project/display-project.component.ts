@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IconService } from '../services/icon.service';
 
 @Component({
   selector: 'app-display-project',
@@ -8,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class DisplayProjectComponent {
   @Input() title!: string;
   @Input() description!: string;
+  constructor(private iconService: IconService) {}
 }

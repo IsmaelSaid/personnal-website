@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GithubUserInfos, GithubReposInfos } from '../models/github-user';
+import { GithubUserInfos } from '../models/github-user';
 import { GithubdataService } from '../services/github-data.service';
 import { Observable, tap } from 'rxjs';
+import { GithubReposInfos } from '../models/github-repos';
 
 @Component({
   selector: 'app-display-github-user',

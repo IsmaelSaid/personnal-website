@@ -2,13 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 import { b64DecodeUnicode } from '../../tools/decoder';
-import {
-  GithubUserInfos,
-  GithubReposInfos,
-  GithubContentInfos,
-  nullGithubUser,
-  nullGithubRepos,
-} from '../models/github-user';
+import { GithubUserInfos, nullGithubUser } from '../models/github-user';
+import { GithubReposInfos, nullGithubRepos } from '../models/github-repos';
+import { GithubContentInfos } from '../models/github-content';
 
 @Injectable({
   providedIn: 'root',

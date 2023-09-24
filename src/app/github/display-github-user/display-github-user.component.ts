@@ -22,9 +22,9 @@ export class DisplayGithubUserComponent implements OnInit {
       .getUser(this.userName)
       .pipe(tap(console.info));
 
-    this.githubReposInfos$ = this.githubdataservice
-      .getRepos(this.userName)
-      .pipe(tap(console.log));
+    // this.githubReposInfos$ = this.githubdataservice
+    // .getRepos(this.userName)
+    // .pipe(tap(console.log));
 
     this.githubContentInfo$ = this.githubdataservice
       .getContent('IsmaelSaid', 'Demande-de-valeurs-foncieres', 'readme.md')

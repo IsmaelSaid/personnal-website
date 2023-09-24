@@ -7,7 +7,7 @@
 
         <div class="projects-container">
             <app-display-project *ngFor="let repos of githubRepos" title={{repos.name}}
-                description="description"></app-display-project>
+            description={{repos.description}}></app-display-project>
         </div>
     </div>
 </div>

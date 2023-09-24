@@ -13,6 +13,9 @@ export type GithubReposInfos = {
 
   /** The primary programming language used in the repository. */
   language: string;
+
+  /**A description of the repository */
+  description: string;
 };
 
 export const nullGithubRepos: GithubReposInfos = {
@@ -20,4 +23,9 @@ export const nullGithubRepos: GithubReposInfos = {
   full_name: '',
   html_url: '',
   language: '',
+  description: '',
+};
+
+export type configImportedRepos = {
+  [key: string]: string;
 };

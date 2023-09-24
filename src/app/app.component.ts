@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GithubUserInfos } from './github/models/github-user';
 import { Observable } from 'rxjs';
 import { GithubdataService } from './github/services/github-data.service';
-import { GithubReposInfos } from './github/models/github-repos';
+import { GithubReposInfos, configImportedRepos } from './github/models/github-repos';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,10 @@ export class AppComponent implements OnInit {
   githubRepos$!: Observable<GithubReposInfos[]>;
   ngOnInit(): void {
     this.githubUser$ = this.githubdataservice.getUser('IsmaelSaid');
-    this.githubRepos$ = this.githubdataservice.getRepos('IsmaelSaid');
+
+    let config: configImportedRepos = {
+      'Demande-de-valeurs-foncieres': 'pseudo-description',
+    };
+    this.githubRepos$ = this.githubdataservice.getRepos('IsmaelSaid', config);
   }
 }

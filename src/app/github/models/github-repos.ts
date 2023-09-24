@@ -16,6 +16,8 @@ export type GithubReposInfos = {
 
   /**A description of the repository */
   description: string;
+
+  homepage: string;
 };
 
 export const nullGithubRepos: GithubReposInfos = {
@@ -24,6 +26,7 @@ export const nullGithubRepos: GithubReposInfos = {
   html_url: '',
   language: '',
   description: '',
+  homepage: '',
 };
 
 export type configImportedRepos = {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, catchError, filter, map, of } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { b64DecodeUnicode } from '../../tools/decoder';
 import { GithubUserInfos, nullGithubUser } from '../models/github-user';
 import {
@@ -64,6 +64,7 @@ export class GithubdataService {
             html_url: repo.html_url,
             language: repo.language,
             description: config[repo.name],
+            homepage: repo.homepage,
           }));
         })
       );

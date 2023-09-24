@@ -4,10 +4,10 @@
         <div class = "landing-page">
             <app-landing-page nom={{githubUser.name}} bio={{githubUser.bio}}></app-landing-page>
         </div>
-
+        
         <div class="projects-container">
             <app-display-project *ngFor="let repos of githubRepos" title={{repos.name}}
-            description={{repos.description}}></app-display-project>
+            description={{repos.description}} link = {{repos.html_url}} homepage={{repos.homepage}}></app-display-project>
         </div>
     </div>
 </div>

@@ -1,0 +1,12 @@
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-page {
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

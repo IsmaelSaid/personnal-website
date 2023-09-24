@@ -1,8 +1,13 @@
 <app-navbar></app-navbar>
-<div *ngIf = "githubUser$ | async as githubUser">
-    <mat-grid-list cols="1" rowHeight="3:1">
-        <mat-grid-tile>
-            <app-landing-page nom = {{githubUser.name}} bio = {{githubUser.bio}}></app-landing-page>
-        </mat-grid-tile>
-    </mat-grid-list>
+<div *ngIf="githubUser$ | async as githubUser">
+    <div *ngIf="githubRepos$ | async as githubRepos">
+        <div class = "landing-page">
+            <app-landing-page nom={{githubUser.name}} bio={{githubUser.bio}}></app-landing-page>
+        </div>
+
+        <div class="projects-container">
+            <app-display-project *ngFor="let repos of githubRepos" title={{repos.name}}
+                description="description"></app-display-project>
+        </div>
+    </div>
 </div>

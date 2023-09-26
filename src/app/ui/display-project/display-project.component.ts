@@ -32,6 +32,7 @@ export class DisplayProjectComponent {
   @Input() description!: string;
   @Input() link!: string;
   @Input() homepage!: string;
+  @Input() topics!: string[];
 
   constructor(private iconService: IconService) {}
 }

@@ -7,7 +7,7 @@
         
         <div class="projects-container">
             <app-display-project *ngFor="let repos of githubRepos" title={{repos.name}}
-            description={{repos.description}} link = {{repos.html_url}} homepage={{repos.homepage}}></app-display-project>
+            description={{repos.description}} link = {{repos.html_url}} homepage={{repos.homepage}} [topics] = repos.topics></app-display-project>
         </div>
     </div>
 </div>

@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     let config: configImportedRepos = {
       'Demande-de-valeurs-foncieres': 'pseudo-description',
       'ODS-Scrapper': 'pseudo-description',
+      'lazy-times-series-analysis': 'test',
     };
     this.githubRepos$ = this.githubdataservice.getRepos('IsmaelSaid', config);
   }

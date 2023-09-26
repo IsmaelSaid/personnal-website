@@ -63,8 +63,9 @@ export class GithubdataService {
             full_name: repo.full_name,
             html_url: repo.html_url,
             language: repo.language,
-            description: config[repo.name],
+            description: repo.description,
             homepage: repo.homepage,
+            topics: repo.topics,
           }));
         })
       );

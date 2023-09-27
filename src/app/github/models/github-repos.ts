@@ -18,6 +18,8 @@ export type GithubReposInfos = {
   description: string;
 
   homepage: string;
+
+  topics: string[];
 };
 
 export const nullGithubRepos: GithubReposInfos = {
@@ -27,6 +29,7 @@ export const nullGithubRepos: GithubReposInfos = {
   language: '',
   description: '',
   homepage: '',
+  topics: [''],
 };
 
 export type configImportedRepos = {

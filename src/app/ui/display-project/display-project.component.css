@@ -2,9 +2,18 @@
   margin: 20px;
   height: 20rem;
   width: 20rem;
+  justify-content: space-between;
 }
 
 .card-actions {
   display: flex;
   justify-content: space-evenly;
+}
+
+.topic {
+  padding: 1px;
+  margin-right: 4px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: gray;
 }
